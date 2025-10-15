@@ -1,5 +1,5 @@
 import streamlit as st
-from langgraph_backend.chatbot import chatbot
+from langgraph_backend.chatbot import chatbot,retrieve_all_threads
 from langchain_core.messages import HumanMessage,AIMessage
 import uuid
 
@@ -28,7 +28,7 @@ if 'thread_id' not in st.session_state:
     st.session_state['thread_id'] = gen_thread_id()
 
 if 'chat_threads' not in st.session_state:
-    st.session_state['chat_threads'] = []
+    st.session_state['chat_threads'] = retrieve_all_threads()
 
 add_thread(st.session_state['thread_id'])
 
@@ -71,7 +71,12 @@ if user_input:
     with st.chat_message("user"):
         st.text(user_input)
 
-    CONFIG = {'configurable': {'thread_id': st.session_state['thread_id']}}
+    CONFIG = {'configurable': {'thread_id': st.session_state['thread_id']},
+              "metadata":{
+                  "thread_id": st.session_state["thread_id"]
+              },
+              "run_name":"chat_turn"
+              }
 
     # first add the message to message history 
     
