@@ -1,0 +1,6 @@
+streamlit
+google-generativeai
+python-dotenv
+pdf2image
+
+# Note that you need to setup the poppler-windows library in order to use pdf2image in your device
