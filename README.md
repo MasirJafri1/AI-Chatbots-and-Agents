@@ -20,7 +20,7 @@ A comprehensive collection of production-ready AI agents and chatbots built with
 
 ---
 
-## 🌟 Overview
+## Overview
 
 This repository showcases various AI agents and chatbots designed to solve real-world problems across different domains including content generation, document analysis, data extraction, and conversational AI. Each project is self-contained with its own dependencies and can be run independently.
 
@@ -34,7 +34,7 @@ This repository showcases various AI agents and chatbots designed to solve real-
 
 ---
 
-## 🤖 Agents & Chatbots Directory
+## Agents & Chatbots Directory
 
 | Agent/Chatbot Name | Use Case | Description | Technologies | Folder Link |
 |-------------------|----------|-------------|--------------|-------------|
@@ -48,7 +48,7 @@ This repository showcases various AI agents and chatbots designed to solve real-
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -72,7 +72,7 @@ You'll need to obtain API keys for the following services:
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Clone the Repository
 ```bash
@@ -109,7 +109,7 @@ Download and install from: http://blog.alivate.com.au/poppler-windows/
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 ### Environment Variables Setup
 
@@ -221,7 +221,7 @@ AI-Chatbots-and-Agents/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Here's how you can contribute:
 
@@ -256,7 +256,7 @@ When adding a new agent to this repository:
      
 ---
 
-## 👤 Author
+## Author
 
 **Masir Jafri**
 - GitHub: [@MasirJafri1](https://github.com/MasirJafri1)
