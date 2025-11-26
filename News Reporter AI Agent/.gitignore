@@ -1,0 +1,59 @@
+# 🧠 Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+*.eggs/
+build/
+dist/
+pip-wheel-metadata/
+*.log
+
+# 🔒 Environment & secrets
+.env
+.env.local
+.env.*
+*.env
+secrets.toml
+.streamlit/secrets.toml
+
+# 🧰 Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.conda/
+conda/
+.mypy_cache/
+.dmypy.json
+.pytest_cache/
+
+# 📦 Streamlit specific
+.streamlit/config.toml
+.streamlit/credentials.toml
+
+# 🧠 Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# 🧱 VSCode / IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 🧾 OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 🧰 Other caches
+.cache/
+__cache__/
+*.tmp
+*.bak
+*.swp
+*.swo
