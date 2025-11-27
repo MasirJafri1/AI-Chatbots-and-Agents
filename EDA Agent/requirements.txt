@@ -1,0 +1,9 @@
+pandas 
+numpy
+matplotlib
+seaborn
+chainlit>=1.0.0
+Pillow>9.0.0
+google-generativeai
+python-dotenv
+tabulate
