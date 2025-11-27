@@ -38,6 +38,7 @@ This repository showcases various AI agents and chatbots designed to solve real-
 
 | Agent/Chatbot Name | Use Case | Description | Technologies | Folder Link |
 |-------------------|----------|-------------|--------------|-------------|
+| **Data Analysis Agent** | Data Science & Analytics | AI-powered data analysis agent that performs comprehensive exploratory data analysis on CSV files. Automatically generates multiple visualizations including correlation heatmaps, pairplots, violin plots, histograms, box plots, and count plots. Uses Gemini 2.0 Flash vision model to analyze visualizations and provide intelligent insights. Features streaming responses, robust error handling with retry logic, and automatic encoding detection. | Chainlit, Gemini 2.0 Flash, Pandas, Matplotlib, Seaborn | [`Data Analysis Agent/`](./Data%20Analysis%20Agent) |
 | **News Reporter AI Agent** | Automated Content Generation | Multi-agent system with researcher and writer agents that collaborate to generate comprehensive tech news articles. Uses web search for current information and produces markdown formatted reports. | CrewAI, Gemini 2.0 Flash, SERP API | [`News Reporter AI Agent/`](./News%20Reporter%20AI%20Agent) |
 | **Resume ATS Analyzer** | Recruitment & HR Tech | AI-powered Applicant Tracking System that analyzes resumes against job descriptions, provides match percentages, identifies missing keywords, and offers professional evaluation. Processes PDFs as images using vision-capable LLMs. | Gemini 2.0 Flash (Vision), Streamlit, pdf2image | [`Resume ATS and Score Analyzer/`](./Resume%20ATS%20and%20Score%20Analyzer) |
 | **Text to SQL LLM App** | Database Query Interface | Natural language to SQL converter that allows non-technical users to query databases using plain English. Demonstrates prompt engineering for code generation with strict output formatting. | Gemini 2.0 Flash, SQLite, Streamlit | [`Text to SQL LLM App/`](./Text%20to%20SQL%20LLM%20App) |
@@ -105,7 +106,7 @@ brew install poppler
 ```
 
 **Windows:**
-Download and install from: http://blog.alivate.com.au/poppler-windows/
+Download and install from: https://github.com/oschwartz10612/poppler-windows/releases/tag/v25.11.0-0
 
 ---
 
@@ -128,47 +129,51 @@ SERPER_API_KEY=your_serper_api_key_here  # Only for News Reporter Agent
 
 ## 🎯 Usage Examples
 
-### Running an Agent
-
 Each agent can be run independently. Here are examples:
 
-#### 1. MultiPDF Chat Bot
+#### 1. Data Analysis Agent
+```bash
+cd "Data Analysis Agent"
+chainlit run app.py
+```
+
+#### 2. MultiPDF Chat Bot
 ```bash
 cd "Chat with MultiPDF document"
 streamlit run app.py
 ```
 
-#### 2. Resume ATS Analyzer
+#### 3. Resume ATS Analyzer
 ```bash
 cd "Resume ATS and Score Analyzer"
 streamlit run app.py
 ```
 
-#### 3. Text to SQL App
+#### 4. Text to SQL App
 ```bash
 cd "Text to SQL LLM App"
 streamlit run app.py
 ```
 
-#### 4. News Reporter Agent (CrewAI)
+#### 5. News Reporter Agent (CrewAI)
 ```bash
 cd "News Reporter AI Agent"
 python crew.py  # Modify the topic in crew.py before running
 ```
 
-#### 5. LangGraph Chatbot
+#### 6. LangGraph Chatbot
 ```bash
 cd "Langgraph- Chatbot"
 streamlit run streamlit_frontend.py
 ```
 
-#### 6. YT & Web Summarizer
+#### 7. YT & Web Summarizer
 ```bash
 cd "Langchain - YT & Web Summarizer"
 streamlit run app.py
 ```
 
-#### 7. Invoice Extractor
+#### 8. Invoice Extractor
 ```bash
 cd "Multilanguage Invoice Extractor"
 streamlit run app.py
@@ -180,6 +185,10 @@ streamlit run app.py
 
 ```
 AI-Chatbots-and-Agents/
+├── Data Analysis Agent/
+│   ├── app.py
+│   ├── requirements.txt
+│   └── .gitignore
 ├── Chat with MultiPDF document/
 │   ├── app.py
 │   ├── requirements.txt
@@ -261,7 +270,7 @@ When adding a new agent to this repository:
 **Masir Jafri**
 - GitHub: [@MasirJafri1](https://github.com/MasirJafri1)
 - Email: masirjafri1@gmail.com
-- Linkedin: [@MasirAbbas Jafri](https://www.linkedin.com/in/masirjafri)
+- LinkedIn: [@MasirAbbas Jafri](https://www.linkedin.com/in/masirjafri)
 - Hashnode: [@MasirJafri](https://masirjafri.hashnode.dev)
 
 ---
@@ -279,7 +288,7 @@ When adding a new agent to this repository:
 
 ## 📊 Repository Stats
 
-- **Total Projects**: 7
+- **Total Projects**: 8
 - **Created**: October 2025
 - **Last Updated**: November 2025
 
