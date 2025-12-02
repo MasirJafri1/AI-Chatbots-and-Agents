@@ -1,0 +1,4 @@
+streamlit
+embedchain[github]
+python-dotenv
+sentence-transformers
