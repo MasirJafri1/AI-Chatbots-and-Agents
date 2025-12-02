@@ -1,6 +1,6 @@
 # 🤖 AI Chatbots and Agents Repository
 
-A comprehensive collection of production-ready AI agents and chatbots built with cutting-edge LLM technologies including Google Gemini, Groq, LangChain, CrewAI, and LangGraph.
+A comprehensive collection of production-ready AI agents and chatbots built with cutting-edge LLM technologies including Google Gemini, Groq, LangChain, CrewAI, LangGraph, and Embedchain.
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.0+-red.svg)](https://streamlit.io/)
@@ -16,13 +16,17 @@ A comprehensive collection of production-ready AI agents and chatbots built with
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Configuration](#configuration)
+- [Usage Examples](#usage-examples)
+- [Project Structure](#project-structure)
 - [Contributing](#contributing)
+- [Author](#author)
 
 ---
 
-## Overview
+<details open>
+<summary><h2>Overview</h2></summary>
 
-This repository showcases various AI agents and chatbots designed to solve real-world problems across different domains including content generation, document analysis, data extraction, and conversational AI. Each project is self-contained with its own dependencies and can be run independently.
+This repository showcases various AI agents and chatbots designed to solve real-world problems across different domains including content generation, document analysis, data extraction, conversational AI, code repository exploration, and academic research. Each project is self-contained with its own dependencies and can be run independently.
 
 ### Key Features
 - 🚀 Production-ready implementations
@@ -31,13 +35,20 @@ This repository showcases various AI agents and chatbots designed to solve real-
 - 📚 Multiple LLM providers (Gemini, Groq)
 - 💾 Persistent storage and state management
 - 🌐 Multi-modal capabilities (text, images, PDFs)
+- 🔍 RAG-based document and code retrieval
+- 📖 Academic research paper integration
+
+</details>
 
 ---
 
-## Agents & Chatbots Directory
+<details open>
+<summary><h2>Agents & Chatbots Directory</h2></summary>
 
 | Agent/Chatbot Name | Use Case | Description | Technologies | Folder Link |
 |-------------------|----------|-------------|--------------|-------------|
+| **Chat with GitHub Agent** | Code Repository Q&A | RAG-based agent that enables conversational interaction with GitHub repositories. Uses embeddings to understand repository structure, code, documentation, and issues. Allows developers to query codebases, understand architecture, find specific implementations, and get context-aware answers about any public GitHub repository. | Embedchain, Groq (GPT-OSS-120B), HuggingFace Embeddings, Chroma VectorDB, Streamlit | [`Chat with Github Agent/`](./Chat%20with%20Github%20Agent) |
+| **Chat with Research Paper** | Academic Research Assistant | AI-powered research assistant that searches and retrieves information from arXiv research papers. Enables researchers and students to query academic literature, get paper summaries, understand complex concepts, and explore research topics through natural language queries. Automatically fetches relevant papers from arXiv database. | Agno, Groq (GPT-OSS-120B), ArxivTools, Streamlit | [`Chat with Research Paper/`](./Chat%20with%20Research%20Paper) |
 | **Data Analysis Agent** | Data Science & Analytics | AI-powered data analysis agent that performs comprehensive exploratory data analysis on CSV files. Automatically generates multiple visualizations including correlation heatmaps, pairplots, violin plots, histograms, box plots, and count plots. Uses Gemini 2.0 Flash vision model to analyze visualizations and provide intelligent insights. Features streaming responses, robust error handling with retry logic, and automatic encoding detection. | Chainlit, Gemini 2.0 Flash, Pandas, Matplotlib, Seaborn | [`Data Analysis Agent/`](./Data%20Analysis%20Agent) |
 | **News Reporter AI Agent** | Automated Content Generation | Multi-agent system with researcher and writer agents that collaborate to generate comprehensive tech news articles. Uses web search for current information and produces markdown formatted reports. | CrewAI, Gemini 2.0 Flash, SERP API | [`News Reporter AI Agent/`](./News%20Reporter%20AI%20Agent) |
 | **Resume ATS Analyzer** | Recruitment & HR Tech | AI-powered Applicant Tracking System that analyzes resumes against job descriptions, provides match percentages, identifies missing keywords, and offers professional evaluation. Processes PDFs as images using vision-capable LLMs. | Gemini 2.0 Flash (Vision), Streamlit, pdf2image | [`Resume ATS and Score Analyzer/`](./Resume%20ATS%20and%20Score%20Analyzer) |
@@ -47,9 +58,12 @@ This repository showcases various AI agents and chatbots designed to solve real-
 | **YT & Web Summarizer** | Content Curation & Analysis | Universal content summarization tool that generates concise summaries from YouTube videos (via transcripts) and web articles. Configurable summary length with consistent formatting. | LangChain, Groq (Llama-3.3-70b), YouTube Transcript API, Streamlit | [`Langchain - YT & Web Summarizer/`](./Langchain%20-%20YT%20%26%20Web%20Summarizer) |
 | **LangGraph Chatbot** | Conversational AI & Customer Support | Stateful chatbot with persistent conversation memory, multi-thread management, and SQLite-based checkpointing. Supports conversation history, thread switching, and streaming responses. | LangGraph, Groq (Llama-3.3-70b), SQLite, Streamlit | [`Langgraph- Chatbot/`](./Langgraph-%20Chatbot) |
 
+</details>
+
 ---
 
-## Getting Started
+<details open>
+<summary><h2>Getting Started</h2></summary>
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -63,17 +77,29 @@ You'll need to obtain API keys for the following services:
    - Visit: https://makersuite.google.com/app/apikey
    - Create API key and save as `GOOGLE_API_KEY`
 
-2. **Groq** (for Llama models)
+2. **Groq** (for Llama models and GPT-OSS)
    - Visit: https://console.groq.com/
    - Create API key and save as `GROQ_API_KEY`
 
-3. **SERPER** (for web search - News Agent only)
+3. **GitHub Token** (for GitHub Agent only)
+   - Visit: https://github.com/settings/tokens
+   - Generate a personal access token with `repo` scope
+   - Save as `GITHUB_TOKEN`
+
+4. **HuggingFace** (for embeddings - GitHub Agent only)
+   - Visit: https://huggingface.co/settings/tokens
+   - Create API token and save as `HUGGINGFACE_API_KEY`
+
+5. **SERPER** (for web search - News Agent only)
    - Visit: https://serper.dev/
    - Create API key and save as `SERPER_API_KEY`
 
+</details>
+
 ---
 
-## Installation
+<details open>
+<summary><h2>Installation</h2></summary>
 
 ### Clone the Repository
 ```bash
@@ -86,8 +112,8 @@ cd AI-Chatbots-and-Agents
 Each agent/chatbot has its own `requirements.txt` file. Navigate to the desired folder and install dependencies:
 
 ```bash
-# Example: Installing dependencies for MultiPDF Chat Bot
-cd "Chat with MultiPDF document"
+# Example: Installing dependencies for GitHub Agent
+cd "Chat with Github Agent"
 pip install -r requirements.txt
 ```
 
@@ -108,83 +134,115 @@ brew install poppler
 **Windows:**
 Download and install from: https://github.com/oschwartz10612/poppler-windows/releases/tag/v25.11.0-0
 
+</details>
+
 ---
 
-## Configuration
+<details open>
+<summary><h2>Configuration</h2></summary>
 
 ### Environment Variables Setup
 
 Create a `.env` file in each project folder with the required API keys:
 
 ```bash
-# Example .env file
-GOOGLE_API_KEY=your_google_api_key_here
+# Example .env file for GitHub Agent
+GITHUB_TOKEN=your_github_token_here
 GROQ_API_KEY=your_groq_api_key_here
+HUGGINGFACE_API_KEY=your_huggingface_api_key_here
 SERPER_API_KEY=your_serper_api_key_here  # Only for News Reporter Agent
 ```
 
 ⚠️ **Security Note:** Never commit your `.env` file to version control. Each project includes a `.gitignore` file that excludes `.env` files.
 
+</details>
+
 ---
 
-## 🎯 Usage Examples
+<details open>
+<summary><h2>Usage Examples</h2></summary>
 
 Each agent can be run independently. Here are examples:
 
-#### 1. Data Analysis Agent
+#### 1. Chat with GitHub Agent (NEW!)
+```bash
+cd "Chat with Github Agent"
+streamlit run app.py
+# Enter repository in format: owner/repo (e.g., MasirJafri1/AI-Chatbots-and-Agents)
+```
+
+#### 2. Chat with Research Paper (NEW!)
+```bash
+cd "Chat with Research Paper"
+streamlit run app.py
+# Enter research topic or specific paper query
+```
+
+#### 3. Data Analysis Agent
 ```bash
 cd "Data Analysis Agent"
 chainlit run app.py
 ```
 
-#### 2. MultiPDF Chat Bot
+#### 4. MultiPDF Chat Bot
 ```bash
 cd "Chat with MultiPDF document"
 streamlit run app.py
 ```
 
-#### 3. Resume ATS Analyzer
+#### 5. Resume ATS Analyzer
 ```bash
 cd "Resume ATS and Score Analyzer"
 streamlit run app.py
 ```
 
-#### 4. Text to SQL App
+#### 6. Text to SQL App
 ```bash
 cd "Text to SQL LLM App"
 streamlit run app.py
 ```
 
-#### 5. News Reporter Agent (CrewAI)
+#### 7. News Reporter Agent (CrewAI)
 ```bash
 cd "News Reporter AI Agent"
 python crew.py  # Modify the topic in crew.py before running
 ```
 
-#### 6. LangGraph Chatbot
+#### 8. LangGraph Chatbot
 ```bash
 cd "Langgraph- Chatbot"
 streamlit run streamlit_frontend.py
 ```
 
-#### 7. YT & Web Summarizer
+#### 9. YT & Web Summarizer
 ```bash
 cd "Langchain - YT & Web Summarizer"
 streamlit run app.py
 ```
 
-#### 8. Invoice Extractor
+#### 10. Invoice Extractor
 ```bash
 cd "Multilanguage Invoice Extractor"
 streamlit run app.py
 ```
 
+</details>
+
 ---
 
-## 🎨 Project Structure
+<details open>
+<summary><h2>Project Structure</h2></summary>
 
 ```
 AI-Chatbots-and-Agents/
+├── Chat with Github Agent/
+│   ├── app.py
+│   ├── requirements.txt
+│   └── .gitignore
+├── Chat with Research Paper/
+│   ├── app.py
+│   ├── requirements.txt
+│   └── .gitignore
 ├── Data Analysis Agent/
 │   ├── app.py
 │   ├── requirements.txt
@@ -228,9 +286,12 @@ AI-Chatbots-and-Agents/
 └── README.md
 ```
 
+</details>
+
 ---
 
-## Contributing
+<details open>
+<summary><h2>Contributing</h2></summary>
 
 Contributions are welcome! Here's how you can contribute:
 
@@ -262,7 +323,9 @@ When adding a new agent to this repository:
    - Include error handling
    - Add comments for complex logic
    - Use Streamlit for UI consistency
-     
+
+</details>
+
 ---
 
 ## Author
@@ -275,26 +338,34 @@ When adding a new agent to this repository:
 
 ---
 
-## 🙏 Acknowledgments
+<details open>
+<summary><h2>Acknowledgments</h2></summary>
 
 - Google AI for Gemini API
 - Groq for fast LLM inference
 - LangChain community for excellent documentation
 - CrewAI for multi-agent framework
+- Embedchain for RAG framework
+- Agno for research paper integration
+- arXiv for open academic research
 - Streamlit for amazing UI framework
 - Open source community for various libraries and tools
 
+</details>
+
 ---
 
-## 📊 Repository Stats
+## Repository Stats
 
-- **Total Projects**: 8
+- **Total Projects**: 10 (2 NEW!)
 - **Created**: October 2025
-- **Last Updated**: November 2025
+- **Last Updated**: December 2025
+- **Language**: Python
+- **Stars**: 2 ⭐
 
 ---
 
-## 🔗 Quick Links
+## Quick Links
 
 - [Report Bug](https://github.com/MasirJafri1/AI-Chatbots-and-Agents/issues)
 - [Request Feature](https://github.com/MasirJafri1/AI-Chatbots-and-Agents/issues)
@@ -302,7 +373,7 @@ When adding a new agent to this repository:
 
 ---
 
-## ⭐ Star History
+## Star History
 
 If you find this repository helpful, please consider giving it a star! ⭐
 
