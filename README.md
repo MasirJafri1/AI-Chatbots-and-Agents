@@ -13,6 +13,7 @@ A comprehensive collection of production-ready AI agents and chatbots built with
 
 - [Overview](#overview)
 - [Agents & Chatbots Directory](#agents--chatbots-directory)
+- [Related Projects](#related-projects)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Configuration](#configuration)
@@ -57,6 +58,37 @@ This repository showcases various AI agents and chatbots designed to solve real-
 | **Multilanguage Invoice Extractor** | Document Processing & Automation | Vision-based AI that extracts information from invoices in any language. Supports multilingual text recognition and structured data extraction without requiring OCR. | Gemini 2.0 Flash (Vision), Streamlit, PIL | [`Multilanguage Invoice Extractor/`](./Multilanguage%20Invoice%20Extractor) |
 | **YT & Web Summarizer** | Content Curation & Analysis | Universal content summarization tool that generates concise summaries from YouTube videos (via transcripts) and web articles. Configurable summary length with consistent formatting. | LangChain, Groq (Llama-3.3-70b), YouTube Transcript API, Streamlit | [`Langchain - YT & Web Summarizer/`](./Langchain%20-%20YT%20%26%20Web%20Summarizer) |
 | **LangGraph Chatbot** | Conversational AI & Customer Support | Stateful chatbot with persistent conversation memory, multi-thread management, and SQLite-based checkpointing. Supports conversation history, thread switching, and streaming responses. | LangGraph, Groq (Llama-3.3-70b), SQLite, Streamlit | [`Langgraph- Chatbot/`](./Langgraph-%20Chatbot) |
+
+</details>
+
+---
+
+<details open>
+<summary><h2>Related Projects</h2></summary>
+
+### 🔗 Customer Support Agent (Separate Repository)
+
+A production-grade, enterprise-level AI-powered customer support automation system with advanced multi-agent workflow orchestration.
+
+**Repository:** [Customer-Support-Agent](https://github.com/MasirJafri1/Customer-Support-Agent)
+
+#### Key Features:
+- **Multi-Agent Workflow** - 8-stage intelligent pipeline (Validation → Categorization → Sentiment Analysis → Priority Assignment → Response Generation → Action Suggestions → Re-evaluation → Escalation)
+- **Dual Frontend Architecture** - Separate React portals for customers and employees
+- **RESTful API Backend** - FastAPI with complete CRUD operations
+- **Real-time Analytics Dashboard** - Comprehensive metrics, trends, and complaint tracking
+- **Automated Email Responses** - Context-aware, policy-compliant responses with human escalation
+- **Persistent Storage** - SQLite database with SQLAlchemy ORM
+
+#### Technology Stack:
+- **Backend:** Python, FastAPI, LangChain, LangGraph, Groq, SQLAlchemy, SQLite, Pydantic
+- **Frontend:** React, Axios
+- **AI/ML:** Multi-agent system with 8 specialized agents for different tasks
+
+#### Why Separate Repository?
+This project is a complete, production-ready customer support solution with complex architecture including multiple frontends, backend APIs, database management, and email integration. It's structured as an enterprise application rather than a standalone agent/chatbot demo.
+
+**[View Customer Support Agent →](https://github.com/MasirJafri1/Customer-Support-Agent)**
 
 </details>
 
@@ -357,9 +389,9 @@ When adding a new agent to this repository:
 
 ## Repository Stats
 
-- **Total Projects**: 10 (2 NEW!)
+- **Total Projects**: 10 (in this repo) + 1 (linked)
 - **Created**: October 2025
-- **Last Updated**: December 2025
+- **Last Updated**: January 2026
 - **Language**: Python
 - **Stars**: 2 ⭐
 
@@ -370,6 +402,7 @@ When adding a new agent to this repository:
 - [Report Bug](https://github.com/MasirJafri1/AI-Chatbots-and-Agents/issues)
 - [Request Feature](https://github.com/MasirJafri1/AI-Chatbots-and-Agents/issues)
 - [GitHub Profile](https://github.com/MasirJafri1)
+- [Customer Support Agent Repository](https://github.com/MasirJafri1/Customer-Support-Agent)
 
 ---
 
