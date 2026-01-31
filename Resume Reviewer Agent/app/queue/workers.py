@@ -6,9 +6,9 @@ from openai import OpenAI
 import base64
 
 # flake8:noqa
-OPEN_ROUTER_KEY = os.getenv("OPEN_ROUTER_KEY")
+OPEN_ROUTER_KEY = os.getenv("OPENROUTER_API_KEY")
 if not OPEN_ROUTER_KEY:
-    raise RuntimeError("Missing MY_API_KEY")
+    raise RuntimeError("Missing api key")
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",

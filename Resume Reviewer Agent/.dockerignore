@@ -1,0 +1,35 @@
+# Byte-code files
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Development/testing related files and directories
+.pytest_cache
+test/
+tests/
+venv/
+env/
+
+# Dependency management
+# Exclude the virtual environment directory created by pipenv or poetry
+.venv
+
+# Editor/IDE-specific files (optional)
+.vscode/
+.idea/
+
+# Git
+.git
+.gitignore
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Environment variables and secrets (important for security)
+.env
+.flaskenv
+config*.toml
+*.enc
