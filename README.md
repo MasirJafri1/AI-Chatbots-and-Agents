@@ -58,6 +58,7 @@ This repository showcases various AI agents and chatbots designed to solve real-
 | **Multilanguage Invoice Extractor** | Document Processing & Automation | Vision-based AI that extracts information from invoices in any language. Supports multilingual text recognition and structured data extraction without requiring OCR. | Gemini 2.0 Flash (Vision), Streamlit, PIL | [`Multilanguage Invoice Extractor/`](./Multilanguage%20Invoice%20Extractor) |
 | **YT & Web Summarizer** | Content Curation & Analysis | Universal content summarization tool that generates concise summaries from YouTube videos (via transcripts) and web articles. Configurable summary length with consistent formatting. | LangChain, Groq (Llama-3.3-70b), YouTube Transcript API, Streamlit | [`Langchain - YT & Web Summarizer/`](./Langchain%20-%20YT%20%26%20Web%20Summarizer) |
 | **LangGraph Chatbot** | Conversational AI & Customer Support | Stateful chatbot with persistent conversation memory, multi-thread management, and SQLite-based checkpointing. Supports conversation history, thread switching, and streaming responses. | LangGraph, Groq (Llama-3.3-70b), SQLite, Streamlit | [`Langgraph- Chatbot/`](./Langgraph-%20Chatbot) |
+| **Resume Reviewer Agent** | Resume Analysis & Career Development | Production-grade resume review API that provides professional three-paragraph feedback on resumes. Features async job processing with Redis Queue, MongoDB persistence, Docker containerization, and vision-based PDF analysis using Gemini 2.5 Flash through OpenRouter. Analyzes resume strengths, weaknesses, and provides actionable recommendations for improvement. | FastAPI, OpenRouter (Gemini 2.5 Flash), MongoDB, Redis Queue, Docker, pdf2image | [`Resume Reviewer Agent/`](./Resume%20Reviewer%20Agent) |
 
 </details>
 
@@ -258,6 +259,15 @@ cd "Multilanguage Invoice Extractor"
 streamlit run app.py
 ```
 
+#### 11. Resume Reviewer Agent
+```bash
+cd "Resume Reviewer Agent"
+# Using Docker Compose (recommended)
+docker-compose -f docker-compose.prod.yaml up
+# API will be available at http://localhost:8000
+# Upload resume via POST /upload endpoint
+```
+
 </details>
 
 ---
@@ -313,6 +323,17 @@ AI-Chatbots-and-Agents/
 │   ├── app.py
 │   ├── sql.py
 │   ├── student.db
+│   ├── requirements.txt
+│   └── .gitignore
+├── Resume Reviewer Agent/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── server.py
+│   │   ├── db/
+│   │   ├── queue/
+│   │   └── utils/
+│   ├── Dockerfile
+│   ├── docker-compose.prod.yaml
 │   ├── requirements.txt
 │   └── .gitignore
 └── README.md
@@ -389,11 +410,11 @@ When adding a new agent to this repository:
 
 ## Repository Stats
 
-- **Total Projects**: 10 (in this repo) + 1 (linked)
+- **Total Projects**: 11 (in this repo) + 1 (linked)
 - **Created**: October 2025
-- **Last Updated**: January 2026
+- **Last Updated**: February 2026
 - **Language**: Python
-- **Stars**: 2 ⭐
+- **Stars**: 3 ⭐
 
 ---
 
